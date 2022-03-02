@@ -1,0 +1,77 @@
+{
+  "name": "loop",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "ppomf",
+  "actions": [
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "loop",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "loop",
+      "comparison": "1",
+      "value": "'on'",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "loop",
+      "comparison": "1",
+      "value": "'off'",
+      "iftrue": "2",
+      "iftrueVal": "9",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: Użyj: `<on/off>`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "status": "0",
+      "loop": "1",
+      "name": "Loop Queue"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Włączono!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "status": "1",
+      "loop": "1",
+      "name": "Loop Queue"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Wyłączone!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}
