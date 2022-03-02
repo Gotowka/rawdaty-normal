@@ -1,0 +1,44 @@
+{
+  "name": "szachy",
+  "permissions": "NONE",
+  "restriction": "0",
+  "_id": "PCWGk",
+  "actions": [
+    {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "const Discord = require('discord.js');\nconst { DiscordTogether } = require('discord-together');\n\nclient.discordTogether = new DiscordTogether(client);\n\nif(!msg.member.voice.channel) {\n    msg.channel.send(\"Dołącz do kanału głosowego, aby używać tego polecenia.\")\n    \n} else if(msg.member.voice.channel) {\n            client.discordTogether.createTogetherCode(msg.member.voice.channelID, 'chess').then(invite => {\n                Actions.storeValue(invite.code, 1, \"GameInvite\", cache);\n                Actions.callNextAction(cache);\n            });\n};",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "title": "Szachy",
+      "author": "",
+      "color": "#0481c9",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "https://cdn.discordapp.com/attachments/914992405726502962/948395183697965056/chess_banner.png",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "By pograć **szachy** z kolegami [Kliknij](${tempVars(\"GameInvite\")})",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    }
+  ]
+}
