@@ -1,0 +1,44 @@
+{
+  "name": "poker",
+  "permissions": "NONE",
+  "restriction": "4",
+  "_id": "woUFy",
+  "actions": [
+    {
+      "behavior": "1",
+      "interpretation": "1",
+      "code": "const Discord = require('discord.js');\nconst { DiscordTogether } = require('discord-together');\n\nclient.discordTogether = new DiscordTogether(client);\n\nif(!msg.member.voice.channel) {\n    msg.channel.send(\"Dołącz do kanału głosowego, aby używać tego polecenia.\")\n    \n} else if(msg.member.voice.channel) {\n            client.discordTogether.createTogetherCode(msg.member.voice.channelID, 'poker').then(invite => {\n                Actions.storeValue(invite.code, 1, \"GameInvite\", cache);\n                Actions.callNextAction(cache);\n            });\n};",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "title": "Poker",
+      "author": "",
+      "color": "#9342f5",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "https://cdn.discordapp.com/attachments/914992405726502962/948386253697585162/apps.58988.14598527297254167.0289fc85-ca45-4e21-8ed6-a6937d75c2ea.jpg",
+      "storage": "1",
+      "varName": "embedpoker",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embedpoker",
+      "message": "By pograć **pokera** z kolegami [Kliknij](${tempVars(\"GameInvite\")})",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embedpoker",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    }
+  ]
+}
