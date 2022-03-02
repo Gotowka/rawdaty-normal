@@ -1,0 +1,95 @@
+{
+  "name": "skip",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "AerfW",
+  "actions": [
+    {
+      "server": "0",
+      "info": "4",
+      "storage": "1",
+      "varName": "1",
+      "varName2": "",
+      "name": "Store Audio Info"
+    },
+    {
+      "amount": "1",
+      "name": "Skip Queue"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "<a:yes:919315338867384350> Pomyślnie ominięto muzykę!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "2",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "video": "https://www.youtube.com/watch?v=${tempVars(\"1\")}",
+      "info": "2",
+      "storage": "1",
+      "varName": "tytul",
+      "name": "Store YouTube Info"
+    },
+    {
+      "time": "1",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "type": "0",
+      "input": "https://www.youtube.com/watch?v=${tempVars(\"1\")}",
+      "info0": "8",
+      "info1": "1",
+      "apikey": "",
+      "results": "1",
+      "storage": "1",
+      "varName": "zdjecie",
+      "name": "YouTube Search"
+    },
+    {
+      "title": "${tempVars(\"tytul\")}",
+      "author": "",
+      "color": "RANDOM",
+      "timestamp": "false",
+      "url": "https://www.youtube.com/watch?v=${tempVars(\"1\")}",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "${tempVars(\"zdjecie\")}",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "©️  MusicalBot By money#2222",
+      "footerIcon": "https://cdn.discordapp.com/attachments/670150730119905301/925074637069615114/dddd.png",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "_timeRestriction": 10,
+  "_aliases": [
+    "s"
+  ]
+}
