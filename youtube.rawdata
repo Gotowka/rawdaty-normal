@@ -1,0 +1,46 @@
+{
+  "name": "youtube",
+  "permissions": "NONE",
+  "restriction": "4",
+  "_id": "iGZFZ",
+  "actions": [
+    {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "const Discord = require('discord.js');\nconst { DiscordTogether } = require('discord-together');\n\nclient.discordTogether = new DiscordTogether(client);\n\nif(!msg.member.voice.channel) {\n    msg.channel.send(\"Dołącz do kanału głosowego, aby używać tego polecenia.\")\n    \n} else if(msg.member.voice.channel) {\n            client.discordTogether.createTogetherCode(msg.member.voice.channelID, 'youtube').then(invite => {\n                Actions.storeValue(invite.code, 1, \"GameInvite\", cache);\n                Actions.callNextAction(cache);\n            });\n};",
+      "storage": "0",
+      "varName": "GameInvite",
+      "name": "Run Script"
+    },
+    {
+      "title": "YouTube",
+      "author": "",
+      "color": "RED",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "https://cdn.discordapp.com/attachments/914992405726502962/948384023061876797/unknown.png",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "By pooglądać **youtube** z kolegami [Kliknij](${tempVars(\"GameInvite\")})",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "comType": "4",
+  "description": "YouTube - Together"
+}
